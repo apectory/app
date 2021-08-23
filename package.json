@@ -1,0 +1,20 @@
+{
+  "name": "apna-pariwar",
+  "version": "1.0.0",
+  "description": "Apna Pariwar is a complaint management system.",
+  "main": "login.js",
+  "scripts": {
+    "start": "nodemon login.js"
+  },
+  "author": "Karan Singh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-session": "^1.17.2",
+    "mysql": "*",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+}
+}
