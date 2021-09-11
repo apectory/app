@@ -10,49 +10,136 @@
 	<link href="https://fonts.googleapis.com/css?family=Audiowide|Source+Sans+Pro|Special+Elite" rel="stylesheet">
 	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
 	<style>
-		.fontAudiowide{
-			font-family: 'Audiowide', cursive;
+	.fontAudiowide{
+		font-family: 'Audiowide', cursive;
+	}
+	.fontSpecialElite{
+		font-family: 'Special Elite', cursive;
+	}
+	.fontSourceSansPro{
+		font-family: 'Source Sans Pro', sans-serif;
+		color:grey;
+	}
+	a[name='dashBoardButtons']:hover{
+		background-color: #1b9bff;
+	}
+
+	[name=historyComplaintInfo] .fa {
+			color: #003366;
+	}
+	[name=historyStudentInfo] .fa {
+			color: #307be1;
+	}
+	[name=historyHandymanInfo] .fa {
+			color: #003366;
+	}
+		* {
+		  padding: 0;
+		  margin: 0;
+		  box-sizing: border-box;
+		  list-style: none;
+		  text-decoration: none;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			text-rendering: optimizeLegibility;
 		}
-		.fontSpecialElite{
-			font-family: 'Special Elite', cursive;
-		}
-		.fontSourceSansPro{
-			font-family: 'Source Sans Pro', sans-serif;
-			color:grey;
-		}
-		a[name='dashBoardButtons']:hover{
-			background-color: red;
+		.sticky {
+  		position: fixed;
+  		top: 0;
+	  	width: 100%;
+			z-index:99;
 		}
 
-		[name=historyComplaintInfo] .fa {
-    		color: #003366;
+		body {
+		  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+		  font-size: 1rem;
+		  font-weight: normal;
+		  line-height: 1.5;
+		  color: #252a32;
+		  background: ;
 		}
-		[name=historyStudentInfo] .fa {
-    		color: #307be1;
+
+		nav{
+		  background: #0082e6;
+		  height: 80px;
+		  width: 100%;
 		}
-		[name=historyHandymanInfo] .fa {
-    		color: #003366;
+
+		.logo{
+			height: 60px;
+		  font-weight: bold;
+			padding-top: 20px;
+			padding-left: 20px;
+		}
+
+		a.active,a:hover{
+		  background: #1b9bff;
+		  transition: .5s;
+		}
+		.checkbtn{
+		  font-size: 30px;
+		  color: white;
+		  float: right;
+			margin-top: 20px;
+		  line-height: 80px;
+		  margin-right: 40px;
+		  cursor: pointer;
+		}
+
+/* footer */
+		.contain {
+		  max-width: 80rem;
+		  width: 100%;
+		  height: auto;
+		  padding: 0 2rem;
+		  margin: 0 auto;
+		}
+
+		.bottom-nav {
+		    display: flex;
+		    position: fixed;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    padding: 0.8rem 0;
+		    background-color: #252a32;
+
+		}
+		.bottom-nav-item {
+		      display: flex;
+		      flex-direction: column;
+		      flex-grow: 1;
+		      justify-content: center;
+		      text-align: center;
+		      font-size: 0.8rem;
+		      color: #ffffff;
+		    }
+
+		.bottom-nav-link {
+		      display: flex;
+		      flex-direction: column;
+		    }
+
+		.active {
+		      color: #ffffff;
 		}
 	</style>
 </head>
-<body>
-	<div class="w3-sidebar w3-bar-block w3-white w3-center w3-animate-left" style="width:20%"> 
-		<h3 class="w3-bar-item w3-center fontSpecialElite w3-border-bottom w3-border-grey" style="margin-bottom:0;">DashBoard</h3>
-	  	<a href="#assignDiv" class="w3-bar-item w3-button w3-padding-small w3-hover-blue" id="assignButton" name="dashBoardButtons"><h1><i class="fa fa-briefcase" aria-hidden="true"></i></h1>
-	  	<h6 class="fontAudiowide">Assign</h6></a>
-	  	<a href="#watchDiv" class="w3-bar-item w3-button w3-padding-small w3-hover-blue" id="watchButton" name="dashBoardButtons"><h1><i class="fa fa-eye" aria-hidden="true"></i></h1>
-	  	<h6 class="fontAudiowide">Watch</h6></a>
-	  	<a href="#historyDiv" class="w3-bar-item w3-button w3-padding-small w3-hover-blue"  id="historyButton" name="dashBoardButtons"><h1><i class="fa fa-history" aria-hidden="true"></i></h1>
-	  	<h6 class="fontAudiowide">History</h6></a>
-	  	<a href="#infoDiv" class="w3-bar-item w3-button w3-hover-blue w3-border-white"  id="infoButton" name="dashBoardButtons"><h1><i class="fa fa-info" aria-hidden="true"></i></h1><h6 class="fontAudiowide">Info</h6></a>
-	  	<a class="w3-bar-item w3-button w3-padding-small w3-hover-blue"  id="logoutButton" name="dashBoardButtons"><h1><i class="fa fa-sign-out" aria-hidden="true"></i></h1>
-	  	<h6 class="fontAudiowide">Log Out</h6></a>
+<body class="w3-flat-clouds">
+<!-- /////////////////////////////////////////// Header ////////////////////////////////////////// -->
+	<div class=" sticky" id="myHeader">
+	<nav>
+		<div class="checkbtn" >
+		<a id="logoutButton" name="dashBoardButtons"><i class="fa fa-power-off" aria-hidden="true"></i></a>
 	</div>
+	<image class="logo" src="dist/image/logoh.png">
+</nav>
 
-<!-- //////////////////////////////////// ASSIGN FORM/////////////////////////////////// --> 
 
-	<div class="w3-flat-clouds w3-display-container" style="margin-left:20%;min-height:100vh;" id="assignDiv" name="commonDivName">
-		<div style="width:90%;margin:0 auto;">
+<!-- //////////////////////////////////// ASSIGN FORM/////////////////////////////////// -->
+
+<div class="w3-flat-clouds w3-display-container" style="height:75vh; overflow-y: scroll;" id="assignDiv" name="commonDivName">
+	<div class="w3-center" style="width:80%;margin:0 auto;">
 			<div class="w3-white">
 				<header class="w3-container w3-flat-belize-hole">
 				  <h2 class="fontSourceSansPro w3-text-white" >Assign Work</h2>
@@ -67,39 +154,31 @@
 
 	<!-- ////////////////////////////// History ////////////////////////-->
 
-	<div class="w3-flat-clouds w3-display-container" style="margin-left:20%;height:100vh;max-height:100vh;overflow-y: scroll;" id="historyDiv" name="commonDivName">
-		<div class="w3-center" style="width:90%;margin:0 auto;">
+	<div class="w3-flat-clouds w3-display-container" style="height:75vh; overflow-y: scroll;" id="historyDiv" name="commonDivName">
+		<div class="w3-center" style="width:80%;margin:0 auto;">
 			<header class="w3-container w3-flat-belize-hole">
-				 <h2 class="fontSourceSansPro w3-text-white" >History</h2>
+				 <h3 class="fontSourceSansPro w3-text-white" >History</h3>
 			</header>
 			<div class="w3-container w3-flat-belize-hole w3-row" style="margin:10px auto;">
-				<div class="w3-third">
-					<div class="w3-col m5" style="margin:10px auto; ">
-						<label>Handyman Id:</label>
-					</div>
-					<div class="w3-col m5">
-						<input type="number" class="w3-input w3-flat-belize-hole w3-text-white w3-border w3-border-white" style="margin: 4px auto;" id="historyHandymanId" placeholder="Input Here">
-					</div>
-				</div>
 				<div class="w3-twothird">
 					<div class="w3-col m3" style="margin:10px auto; ">
-						<label class="">Student: </label>
+						<label class="">Employee: </label>
 					</div>
 					<div class="w3-col m6" style="margin: 4px auto;">
 						<input type="radio" name="sInfo" id="sInfo" class="w3-radio" value="name" checked><label>Name</label>
-						<input type="radio" name="sInfo" id="sInfo" class="w3-radio" value="roll"><label>Roll No</label>
-						<input type="radio" name="sInfo" id="sInfo" class="w3-radio" value="room"><label>Room No</label>
+						<input type="radio" name="sInfo" id="sInfo" class="w3-radio" value="roll"><label>Emp. No.</label>
+						<input type="radio" name="sInfo" id="sInfo" class="w3-radio" value="room"><label>Qt. No.</label>
 					</div>
 					<div class="w3-col m3" style="margin: 4px auto;">
 						<input type="test" id="historySInfoValue" class="w3-input w3-flat-belize-hole w3-text-white w3-border w3-border-white" placeholder="Input Here">
-					</div>				
+					</div>
 				</div>
 			</div>
 
 			<div class="w3-container w3-flat-belize-hole w3-row" style="margin: 10px auto;">
 				<div class="w3-third">
 					<div class="w3-col m5 w3-display-container">
-						<label class="" style="padding: 70px 0">Equipment:</label>
+						<label class="" style="padding: 70px 0">Complaint:</label>
 					</div>
 					<div class="w3-col m5">
 						<select class="w3-select w3-flat-belize-hole w3-border-0" id="historyEquipment">
@@ -131,7 +210,7 @@
 							<option>Carpenter</option>
 							<option>Other</option>
 						</select>
-					</div>			
+					</div>
 				</div>
 			</div>
 			<div class="w3-container w3-flat-belize-hole w3-row" style="margin: 10px auto;">
@@ -173,13 +252,13 @@
 							<option>Average</option>
 							<option>Good</option>
 						</select>
-					</div>			
+					</div>
 				</div>
 			</div>
 			<div class="w3-container w3-flat-belize-hole w3-row" style="margin: 10px auto;">
 				<div class="w3-third" >
 					<input class="w3-check" id="historyStudentCheck" type="checkbox" checked="checked">
-					<label>Student Info</label>
+					<label>Employee Info</label>
 				</div>
 				<div class="w3-third" >
 					<input class="w3-check" id="historyHandymanCheck" type="checkbox" checked="checked">
@@ -187,23 +266,24 @@
 				</div>
 				<div class="w3-third" >
 					<input class="w3-check" id="historyComplaintCheck" type="checkbox" checked="checked">
-					<label>Complaint Info</label>	
+					<label>Complaint Info</label>
 					<button class="w3-btn w3-right w3-border-white w3-border w3-hover-blue" onclick="$('#historyButton').trigger('click');"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 				</div>
-				
+
 			</div>
 		</div>
 		<div id="historyDivChild" class="w3-center" style="width:90%;margin:0 auto;">
-			
+
 		</div>
 	</div>
 
+
 	<!-- ////////////////////////////// Watch ////////////////////////// -->
 
-	<div class="w3-flat-clouds w3-display-container" style="margin-left:20%;height:100vh;max-height:100vh;overflow-y: scroll;" id="watchDiv" name="commonDivName">
-		<div class="w3-center" style="width:90%;margin:0 auto;">
+	<div class="w3-flat-clouds w3-display-container" style="height:75vh; overflow-y: scroll;" id="watchDiv" name="commonDivName">
+		<div class="w3-center" style="width:80%;margin:0 auto;">
 			<header class="w3-container w3-flat-belize-hole" style="width:100%;">
-				 <h2 class="fontSourceSansPro w3-text-white" >Watch</h2>
+				 <h3 class="fontSourceSansPro w3-text-white" >Watch</h2>
 			</header>
 		</div>
 		<div style="width:90%;margin:0 auto;">
@@ -214,7 +294,7 @@
 					</header>
 				</div>
 				<div id="watchDivElectrician" class="w3-margin-top">
-					
+
 				</div>
 
 				<div class="w3-center">
@@ -222,8 +302,8 @@
 					  	<h5 class="fontSourceSansPro w3-center w3-text-white" >Carpenter</h5>
 					</header>
 				</div>
-				<div id="watchDivCarpenter" class="w3-margin-top">	
-					
+				<div id="watchDivCarpenter" class="w3-margin-top">
+
 				</div>
 
 				<div class="w3-center">
@@ -232,48 +312,49 @@
 					</header>
 				</div>
 				<div id="watchDivOthers" class="w3-margin-top">
-					
+
 				</div>
 			</div>
 		</div>
 	</div>
 
+
 	<!-- ////////////////////////////// Info ////////////////////////-->
 
-	<div class="w3-flat-clouds w3-display-container" style="margin-left:20%;height:100vh;" id="infoDiv" name="commonDivName">
-		<div class="w3-display-middle" style="width:70%;">
+	<div class="w3-flat-clouds w3-display-container" style="height:75vh; overflow-y: scroll;" id="infoDiv" name="commonDivName">
+		<div class="w3-center" style="width:80%;margin:0 auto;">
 			<div class="w3-white ">
 				<header class="w3-container w3-flat-belize-hole">
-				  <h2 class="fontSourceSansPro w3-text-white" >Welcome <span id="userName"></span>
-				  	<span id="changePass"><h6 style="display:inline;"><button class="w3-btn w3-right w3-hover-blue w3-border-white w3-border" id="changeInfo" onclick="$('#changeInfoModal').css('display','block');">Change Info</button></h6></span></h2>
+				  <h3 class="fontSourceSansPro w3-text-white" >Welcome,<span id="userName">Karan</span>
+				  	<span id="changePass"><h6 style="display:inline;"><button class="w3-btn w3-right w3-hover-blue w3-border-white w3-border" id="changeInfo" onclick="$('#changeInfoModal').css('display','block');">Change Info</button></h6></span></h3>
 				</header>
 				<div class="w3-container fontSourceSansPro">
 					<input id="admin_id" name="admin_id" value="" style="display:none;">
-					<h2><span class="fa fa-user-o w3-col m2 s4"></span></h2><h3><span id="actype" class="w3-rest"></span></h3>
-					<h2><span class="fa fa-envelope-o w3-col m2 s4"></span></h2><h3><span id="email" class="w3-rest"></span></h3>
-					<h2><span class="fa fa-phone w3-col m2 s4"></span></h2><h3><span id="mobile" class="w3-rest"></span></h3>
+					<h2><span class="fa fa-user-o w3-col m2 s4"></span></h2><h5><span id="actype" class="w3-rest"></span></h5>
+					<h2><span class="fa fa-envelope-o w3-col m2 s4"></span></h2><h5><span id="email" class="w3-rest"></span></h5>
+					<h2><span class="fa fa-phone w3-col m2 s4"></span></h2><h5><span id="mobile" class="w3-rest"></span></h5>
 				</div>
 			</div>
 			<div class="w3-margin-top">
 			<div class="w3-third w3-light-grey">
 				<header style="text-align: center;" class="fontSourceSansPro">
-					<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">
+					<span class="w3-border-bottom w3-border-blue w3-tag w3-xxxlarge w3-flat-belize-hole w3-padding-medium">
 					<span id="complaintsRegistered">5</span>
 					<h5 style="padding:0;margin:0;">Registered</h5></span>
 				</header>
 			</div>
 			<div class="w3-third w3-light-grey">
 				<header style="text-align: center;" class="fontSourceSansPro">
-					<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">
+					<span class="w3-border-bottom w3-border-green w3-tag w3-xxxlarge w3-flat-nephritis w3-padding-medium">
 					<span id="complaintsSolved">4</span>
 					<h5 style="padding:0;margin:0;">Completed</h5></span>
 				</header>
 			</div>
 			<div class="w3-third w3-light-grey">
 				<header style="text-align: center;" class="fontSourceSansPro">
-					<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">
+					<span class="w3-border-bottom w3-border-red w3-tag w3-xxxlarge w3-flat-alizarin w3-padding-medium">
 					<span id="complaintsPending">1</span>
-					<h5 style="padding:0;margin:0;">Pending</h5></span>
+					<h5 style="padding:0;margin:0;">Unresolved</h5></span>
 				</header>
 			</div>
 			</div>
@@ -306,6 +387,38 @@
 	    </div>
 	  </div>
 </body>
+
+<!-- /////////////////////////////////////////// Footer ////////////////////////////////////////// -->
+<footer>
+			<div class="contain" id="foot">
+				<nav class="bottom-nav">
+					<div class="bottom-nav-item">
+						<div class="bottom-nav-link">
+							<a href="#infoDiv" id="infoButton" name="dashBoardButtons"><h1><i class="fa fa-info" aria-hidden="true"></i></h1>
+							<span><h6 class="fontAudiowide">Info</h6></span></a>
+						</div>
+					</div>
+					<div class="bottom-nav-item">
+						<div class="bottom-nav-link">
+							<a href="#watchDiv" id="watchButton" name="dashBoardButtons"><h1><i class="fa fa-eye" aria-hidden="true"></i></h1>
+							<span><h6 class="fontAudiowide">Watch</h6></span></a>
+						</div>
+					</div>
+					<div class="bottom-nav-item">
+						<div class="bottom-nav-link">
+							<a href="#assignDiv" id="assignButton" name="dashBoardButtons"><h1><i class="fa fa-briefcase" aria-hidden="true"></i></h1>
+							<span><h6 class="fontAudiowide">Assign</h6></span></a>
+						</div>
+					</div>
+					<div class="bottom-nav-item">
+						<div class="bottom-nav-link">
+							<a href="#historyDiv" id="historyButton" name="dashBoardButtons"><h1><i class="fa fa-history" aria-hidden="true"></i></h1>
+							<span><h6 class="fontAudiowide">History</h6></span></a>
+						</div>
+					</div>
+			</nav>
+		</div>
+</footer>
 <script>
 
 $('[name="dashBoardButtons"]').click(function(){
@@ -440,8 +553,8 @@ assignForm.submit(function(){
 		},
 		error: function(jqXHR, textStatus){
 	        if(textStatus === 'timeout')
-	        {     
-	            alert('TimeOut Try Again');         
+	        {
+	            alert('TimeOut Try Again');
 	        }
 	    }
 	});
@@ -517,7 +630,7 @@ $("#infoButton").click(function(){
 				$("#admin_id").val(value[0].admin_id);
 				$("#userName").html("&nbsp;&nbsp;&nbsp;&nbsp;"+value[0].name);
 				$("#actype").html("&nbsp;&nbsp; Admin");
-				$("#email").html("&nbsp;&nbsp; "+value[0].email);
+				$("#email").html("&nbsp;&nbsp; "+value[0].mail);
 				$("#mobile").html("&nbsp;&nbsp; "+value[0].phone_no);
 			}
 		},
@@ -541,24 +654,24 @@ $("#infoButton").click(function(){
 					}
 				}
 			});
-		}	
+		}
 	});
 });
 
 $('#changeInfoButton').click(function(){
-	var passw=  /[^A-Za-z0-9!@_]/;  
-	if($("#old_pass").val().match(passw)||$("#new_pass").val().match(passw))   
-	{   
+	var passw=  /[^A-Za-z0-9!@_]/;
+	if($("#old_pass").val().match(passw)||$("#new_pass").val().match(passw))
+	{
 		alert("A-Z a-z 0-9 and !@_ are allowed");
 		return false;
-	}  
-	else if($("#old_pass").val().length>15||$("#old_pass").val().length<7||$("#new_pass").val().length>15||$("#new_pass").val().length<7) 
-	{   
+	}
+	else if($("#old_pass").val().length>15||$("#old_pass").val().length<7||$("#new_pass").val().length>15||$("#new_pass").val().length<7)
+	{
 		alert("password length must be between 7-15");
 		return false;
 	}
 	else if($("#new_pass").val()!=$("#new_re_pass").val())
-	{   
+	{
 		alert("Re-Enter password wrong");
 		return false;
 	}
@@ -588,7 +701,7 @@ $('#changeInfoButton').click(function(){
 				$("#new_phone_no").val("");
 				return true;
 			}
-			
+
 		}
 	});
 });
@@ -645,7 +758,7 @@ $("#changePhoneButton").click(function(){
 			'<div name="historyComplaintInfo">'+
 				'<div class="w3-row">'+
 					'<div class="w3-third fontSourceSansPro">'+
-						'<h5><span class="fa fa-id-badge w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>C_Id: &nbsp;</b></span><span ><span class="w3-rest"> '+c.complaint_id+'</span></h6>'+
+						'<h5><span class="fa fa-id-badge w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Complaint Id: &nbsp;</b></span><span ><span class="w3-rest"> '+c.complaint_id+'</span></h6>'+
 					'</div>'+
 					'<div class="w3-third fontSourceSansPro">'+
 						'<h5><span class="fa fa-calendar w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Date: &nbsp;</b></span><span> '+c.date.split("T")[0]+'</span></h6>'+
@@ -653,11 +766,11 @@ $("#changePhoneButton").click(function(){
 					'<div class="w3-third fontSourceSansPro">'+
 						'<h5><span class="fa fa-clock-o w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><h6><span><b>Time: &nbsp;</b></span><span >'+c.date.split("T")[1].split(".")[0]+'</span></h6>'+
 					'</div>'+
-					
+
 				'</div>'+
 				'<div class="w3-row">'+
 					'<div class="w3-third fontSourceSansPro">'+
-						'<h5><span class="fa fa-lightbulb-o w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Equipment: &nbsp;</b></span><span > '+c.subject+'</span></h6>'+
+						'<h5><span class="fa fa-lightbulb-o w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Need: &nbsp;</b></span><span > '+c.subject+'</span></h6>'+
 					'</div>'+
 					'<div class="w3-third fontSourceSansPro">'+
 						'<h5><span class="fa fa-list-ul w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Type: &nbsp;</b></span><span ><span class="w3-rest"> '+c.type+'</span></h6>'+
@@ -686,13 +799,10 @@ $("#changePhoneButton").click(function(){
 			'<div name="historyStudentInfo">'+
 				'<div class="w3-row">'+
 					'<div class="w3-third fontSourceSansPro">'+
-						'<h5><span class="fa fa-id-badge w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>S_Id: &nbsp;</b></span><span ><span class="w3-rest"> '+s.student_id+'</span></h6>'+
-					'</div>'+
-					'<div class="w3-third fontSourceSansPro">'+
 						'<h5><span class="fa fa-phone w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Phone no &nbsp;</b></span><span ><span class="w3-rest"> '+s.phone_no+'</span></h6>'+
 					'</div>'+
 					'<div class="w3-third fontSourceSansPro">'+
-						'<h5><span class="fa fa-envelope-o w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Email: &nbsp;</b></span><span ><span class="w3-rest"> '+s.email+'</span></h6>'+
+						'<h5><span class="fa fa-envelope-o w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Emp. No. : &nbsp;</b></span><span ><span class="w3-rest"> '+s.email+'</span></h6>'+
 					'</div>'+
 				'</div>'+
 				'<div class="w3-row">'+
@@ -700,11 +810,9 @@ $("#changePhoneButton").click(function(){
 				'		<h5><span class="fa fa-user-circle-o w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Name: &nbsp;</b></span><span ><span class="w3-rest"> '+s.name+'</span></h6>'+
 				'	</div>'+
 				'	<div class="w3-third fontSourceSansPro">'+
-				'		<h5><span class="fa fa-home w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Room: &nbsp;</b></span><span ><span class="w3-rest"> '+s.gender+' '+s.room_no+'</span></h6>'+
+				'		<h5><span class="fa fa-home w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Address: &nbsp;</b></span><span ><span class="w3-rest"> '+s.gender+' '+s.room_no+'</span></h6>'+
 				'	</div>'+
-				'	<div class="w3-third fontSourceSansPro">'+
-				'		<h5><span class="fa fa-sort-alpha-asc w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Roll No: &nbsp;</b></span><span ><span class="w3-rest"> '+s.roll_no+'</span></h6>'+
-				'	</div>'+
+
 
 				'</div>'+
 			'</div>'+
@@ -712,10 +820,7 @@ $("#changePhoneButton").click(function(){
 			'<div name="historyHandymanInfo">'+
 				'<div class="w3-row">'+
 					'<div class="w3-third fontSourceSansPro">'+
-						'<h5><span class="fa fa-id-badge w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>H_Id: &nbsp;</b></span><span ><span class="w3-rest"> '+h.handyman_id+'</span></h6>'+
-					'</div>'+
-					'<div class="w3-third fontSourceSansPro">'+
-					    '<h5><span class="fa fa-envelope-o w3-col m1 s3 w3-hide-small w3-hide-medium"> </span></h5><h6><span><b> Email: </b></span><span ><span class="w3-rest"> '+h.email+'</span></h6>'+
+						'<h5><span class="fa fa-id-badge w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Handyman Id: &nbsp;</b></span><span ><span class="w3-rest"> '+h.email+'</span></h6>'+
 					'</div>'+
 					'<div class="w3-third fontSourceSansPro">'+
 					    '<h5><span class="fa fa-phone w3-col m1 s3 w3-hide-small w3-hide-medium"> </span></h5><h6><span><b> Phone no: </b></span><span ><span class="w3-rest"> '+h.phone_no+'</span></h6>'+
@@ -753,19 +858,16 @@ $("#changePhoneButton").click(function(){
 function createAssignForm(data){
 	$("#assignForm").append(
 		'<div class="w3-row w3-margin-top" style="margin:0 auto;">'+
-			'<div class="w3-col m1 w3-container s2 w3-center">'+
+			'<div class="w3-col m1 w3-container s3 w3-center">'+
 			'	<div class="w3-container w3-flat-belize-hole">'+
 			'	  	<h3 class="fontSourceSansPro w3-text-white">'+(data.Catagory).charAt(0)+'</h3>'+
 			'	</div>'+
 			'</div>'+
-			'<div class="w3-col m3 s3">'+
-			'	<h5>'+data.name+'</h5>'+
+			'<div class="w3-col m3 s4">'+
+			'	<h6>'+''+data.name+'</h6>'+
 			'</div>'+
-			'<div class="w3-col m3 s3">'+
-			'	<h5>'+data.phone_no+'</h5>'+
-			'</div>'+
-			'<div class="w3-col m3 s3">'+
-			'	<h5>'+data.email+'</h5>'+
+			'<div class="w3-col m3 s4">'+
+			'	<h6>'+data.email+'</h6>'+
 			'</div>'+
 			'<div class="w3-col m1 s1 w3-right">'+
 				'<input class="w3-check" type="checkbox" name="handyman_'+data.handyman_id+'">'+
@@ -780,16 +882,16 @@ function createWatch(handymanType,data){
 		'<div class="w3-panel w3-white w3-margin-top ">'+
 			'<div class="w3-row fontSourceSansPro" style="margin:0 auto;">'+
 				'<div class="w3-col m3 w3-mobile">'+
-				'	<h5>'+data.name+'</h5>'+
+				'	<h6>'+data.name+'</h6>'+
 				'</div>'+
 				'<div class="w3-col m3 w3-mobile">'+
-				'	<h5>'+data.phone_no+'</h5>'+
+				'	<h6>'+data.phone_no+'</h6>'+
 				'</div>'+
 				'<div class="w3-col m4 w3-mobile">'+
-				'	<h5>'+data.email+'</h5>'+
+				'	<h6>'+data.email+'</h6>'+
 				'</div>'+
 				'<div class="w3-col m1 w3-mobile">'+
-					'<h5>'+data.rating+'<span class="fa fa-star"></span></h5>'+
+					'<h6>'+data.rating+'<span class="fa fa-star"></span></h6>'+
 				'</div>'+
 				'<div class="w3-right">'+
 					'<button class="w3-button w3-flat-belize-hole w3-hover-blue" type="button" style="width:100%;" id="watch_'+data.handyman_id+'"><i class="fa fa-caret-down" aria-hidden="true"></i></button>'+
@@ -799,28 +901,28 @@ function createWatch(handymanType,data){
 				'<div class="w3-section w3-row">'+
 					'<div class="w3-center">'+
 						'<header class="w3-container w3-center w3-flat-belize-hole">'+
-						  '	<h5 class="fontSourceSansPro w3-center w3-text-white" >Today"s Analysis</h5>'+
+						  '	<h6 class="fontSourceSansPro w3-center w3-text-white" >Today"s Analysis</h6>'+
 						'</header>'+
 					'</div>'+
 					'<div class="w3-third">'+
 					'	<header style="text-align: center;" class="fontSourceSansPro">'+
 					'		<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">'+
 					'		<span id="todayComplaintsRegistered_'+data.handyman_id+'">NA</span>'+
-					'		<h5 style="padding:0;margin:0;">Registered</h5></span>'+
+					'		<h6 style="padding:0;margin:0;">Registered</h6></span>'+
 					'	</header>'+
 					'</div>'+
 					'<div class="w3-third">'+
 					'	<header style="text-align: center;" class="fontSourceSansPro">'+
 					'		<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">'+
 					'		<span id="todayComplaintsSolved_'+data.handyman_id+'">NA</span>'+
-					'		<h5 style="padding:0;margin:0;">Completed</h5></span>'+
+					'		<h6 style="padding:0;margin:0;">Completed</h6></span>'+
 					'	</header>'+
 					'</div>'+
 					'<div class="w3-third w3-margin-bottom">'+
 					'	<header style="text-align: center;" class="fontSourceSansPro">'+
 					'		<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">'+
 					'		<span id="todayComplaintsPending_'+data.handyman_id+'">NA</span>'+
-					'		<h5 style="padding:0;margin:0;">Pending</h5></span>'+
+					'		<h6 style="padding:0;margin:0;">Pending</h6></span>'+
 					'	</header>'+
 					'</div>'+
 				'</div>'+
@@ -828,28 +930,28 @@ function createWatch(handymanType,data){
 				'<div class="w3-section">'+
 				'	<div class="w3-center">'+
 				'		<header class="w3-container w3-center w3-flat-belize-hole">'+
-				'		  	<h5 class="fontSourceSansPro w3-center w3-text-white" >Overall Analysis</h5>'+
+				'		  	<h6 class="fontSourceSansPro w3-center w3-text-white" >Overall Analysis</h6>'+
 				'		</header>'+
 				'	</div>'+
 				'	<div class="w3-third">'+
 				'		<header style="text-align: center;" class="fontSourceSansPro">'+
 				'			<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">'+
 				'			<span id="complaintsRegistered_'+data.handyman_id+'">NA</span>'+
-				'			<h5 style="padding:0;margin:0;">Registered</h5></span>'+
+				'			<h6 style="padding:0;margin:0;">Registered</h6></span>'+
 				'		</header>'+
 				'	</div>'+
 				'	<div class="w3-third">'+
 				'		<header style="text-align: center;" class="fontSourceSansPro">'+
 				'			<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">'+
 				'			<span id="complaintsSolved_'+data.handyman_id+'">NA</span>'+
-				'			<h5 style="padding:0;margin:0;">Completed</h5></span>'+
+				'			<h6 style="padding:0;margin:0;">Completed</h6></span>'+
 				'		</header>'+
 				'	</div>'+
 				'	<div class="w3-third w3-margin-bottom">'+
 				'		<header style="text-align: center;" class="fontSourceSansPro">'+
 				'			<span class="w3-border-bottom w3-border-blue w3-tag w3-jumbo w3-flat-belize-hole w3-padding-large">'+
 				'			<span id="complaintsPending_'+data.handyman_id+'">NA</span>'+
-				'			<h5 style="padding:0;margin:0;">Unattended</h5></span>'+
+				'			<h6 style="padding:0;margin:0;">Unattended</h6></span>'+
 				'		</header>'+
 				'	</div>'+
 				'</div>'+
@@ -875,5 +977,31 @@ function closeChangeModal(data){
 	$("#new_re_pass").val("");
 }
 
+</script>
+<script>
+var navItems = document.querySelectorAll(".bottom-nav-item");
+
+navItems.forEach(function(e, i) {
+e.addEventListener("click", function(e) {
+	navItems.forEach(function(e2, i2) {
+		e2.classList.remove("active");
+	});
+	this.classList.add("active");
+});
+});
+</script>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
 </script>
 </html>
