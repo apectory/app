@@ -261,10 +261,6 @@
 					<label>Employee Info</label>
 				</div>
 				<div class="w3-third" >
-					<input class="w3-check" id="historyHandymanCheck" type="checkbox" checked="checked">
-					<label>Handyman Info</label>
-				</div>
-				<div class="w3-third" >
 					<input class="w3-check" id="historyComplaintCheck" type="checkbox" checked="checked">
 					<label>Complaint Info</label>
 					<button class="w3-btn w3-right w3-border-white w3-border w3-hover-blue" onclick="$('#historyButton').trigger('click');"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
@@ -281,15 +277,10 @@
 	<!-- ////////////////////////////// Watch ////////////////////////// -->
 
 	<div class="w3-flat-clouds w3-display-container" style="height:75vh; overflow-y: scroll;" id="watchDiv" name="commonDivName">
-		<div class="w3-center" style="width:80%;margin:0 auto;">
-			<header class="w3-container w3-flat-belize-hole" style="width:100%;">
-				 <h3 class="fontSourceSansPro w3-text-white" >Watch</h2>
-			</header>
-		</div>
 		<div style="width:90%;margin:0 auto;">
 			<div class="fontSourceSansPro w3-margin-top">
 				<div class="w3-center">
-					<header class="w3-container w3-tag w3-center w3-flat-belize-hole w3-margin-top">
+					<header class="w3-container w3-center w3-flat-belize-hole w3-margin-top">
 					  	<h5 class="fontSourceSansPro w3-center w3-text-white" >Electrician</h5>
 					</header>
 				</div>
@@ -298,8 +289,8 @@
 				</div>
 
 				<div class="w3-center">
-					<header class="w3-container w3-tag w3-center w3-flat-belize-hole">
-					  	<h5 class="fontSourceSansPro w3-center w3-text-white" >Carpenter</h5>
+					<header class="w3-container w3-center w3-flat-belize-hole">
+					  	<h5 class="fontSourceSansPro w3-center w3-text-white">Carpenter</h5>
 					</header>
 				</div>
 				<div id="watchDivCarpenter" class="w3-margin-top">
@@ -307,8 +298,8 @@
 				</div>
 
 				<div class="w3-center">
-					<header class="w3-container w3-tag w3-center w3-flat-belize-hole">
-					  	<h5 class="fontSourceSansPro w3-center w3-text-white" >Others</h5>
+					<header class="w3-container w3-center w3-flat-belize-hole">
+					  	<h5 class="fontSourceSansPro w3-center w3-text-white">Others</h5>
 					</header>
 				</div>
 				<div id="watchDivOthers" class="w3-margin-top">
@@ -583,9 +574,6 @@ $('#historyButton').click(function(){
 			for(var i=0;i<data.length;++i){
 				createHistory(data[i]);
 			}
-			if($('#historyHandymanCheck').prop('checked')==false){
-				$("[name='historyHandymanInfo']").addClass('w3-hide');
-			}
 			if($('#historyComplaintCheck').prop('checked')== false){
 				$("[name='historyComplaintInfo']").addClass('w3-hide');
 			}
@@ -810,32 +798,10 @@ $("#changePhoneButton").click(function(){
 				'		<h5><span class="fa fa-user-circle-o w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Name: &nbsp;</b></span><span ><span class="w3-rest"> '+s.name+'</span></h6>'+
 				'	</div>'+
 				'	<div class="w3-third fontSourceSansPro">'+
-				'		<h5><span class="fa fa-home w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Address: &nbsp;</b></span><span ><span class="w3-rest"> '+s.gender+' '+s.room_no+'</span></h6>'+
+				'		<h5><span class="fa fa-home w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Address: &nbsp;</b></span><span ><span class="w3-rest">'+s.room_no+'</span></h6>'+
 				'	</div>'+
 
 
-				'</div>'+
-			'</div>'+
-
-			'<div name="historyHandymanInfo">'+
-				'<div class="w3-row">'+
-					'<div class="w3-third fontSourceSansPro">'+
-						'<h5><span class="fa fa-id-badge w3-col m1 s3 w3-hide-small w3-hide-medium"></span></h5><h6><span><b>Handyman Id: &nbsp;</b></span><span ><span class="w3-rest"> '+h.email+'</span></h6>'+
-					'</div>'+
-					'<div class="w3-third fontSourceSansPro">'+
-					    '<h5><span class="fa fa-phone w3-col m1 s3 w3-hide-small w3-hide-medium"> </span></h5><h6><span><b> Phone no: </b></span><span ><span class="w3-rest"> '+h.phone_no+'</span></h6>'+
-					'</div>'+
-				'</div>'+
-				'<div class="w3-row">'+
-					'<div class="w3-third fontSourceSansPro">'+
-						'<h5><span class="fa fa-male w3-col m1 s3 w3-hide-small w3-hide-medium"> </span></h5><h6><span><b> Name: </b></span><span ><span class="w3-rest"> '+h.name+'</span></h6>'+
-					'</div>'+
-					'<div class="w3-third fontSourceSansPro">'+
-					    '<h5><span class="fa fa-wrench w3-col m1 s3 w3-hide-small w3-hide-medium"> </span></h5><h6><span><b> Catagory: </b></span><span ><span class="w3-rest"> '+h.Catagory+'</span></h6>'+
-					'</div>'+
-					'<div class="w3-third fontSourceSansPro">'+
-					    '<h5><span class="fa fa-star w3-col m1 s3 w3-hide-small w3-hide-medium"> </span></h5><h6><span><b> Rating: </b></span><span ><span class="w3-rest"> '+c.rating+'</span></h6>'+
-					'</div>'+
 				'</div>'+
 			'</div>'+
 
@@ -858,13 +824,8 @@ $("#changePhoneButton").click(function(){
 function createAssignForm(data){
 	$("#assignForm").append(
 		'<div class="w3-row w3-margin-top" style="margin:0 auto;">'+
-			'<div class="w3-col m1 w3-container s3 w3-center">'+
-			'	<div class="w3-container w3-flat-belize-hole">'+
-			'	  	<h3 class="fontSourceSansPro w3-text-white">'+(data.Catagory).charAt(0)+'</h3>'+
-			'	</div>'+
-			'</div>'+
 			'<div class="w3-col m3 s4">'+
-			'	<h6>'+''+data.name+'</h6>'+
+			'	<h6>'+data.Catagory+'</h6>'+
 			'</div>'+
 			'<div class="w3-col m3 s4">'+
 			'	<h6>'+data.email+'</h6>'+
@@ -881,15 +842,6 @@ function createWatch(handymanType,data){
 	$("#watchDiv"+handymanType).append(
 		'<div class="w3-panel w3-white w3-margin-top ">'+
 			'<div class="w3-row fontSourceSansPro" style="margin:0 auto;">'+
-				'<div class="w3-col m3 w3-mobile">'+
-				'	<h6>'+data.name+'</h6>'+
-				'</div>'+
-				'<div class="w3-col m3 w3-mobile">'+
-				'	<h6>'+data.phone_no+'</h6>'+
-				'</div>'+
-				'<div class="w3-col m4 w3-mobile">'+
-				'	<h6>'+data.email+'</h6>'+
-				'</div>'+
 				'<div class="w3-col m1 w3-mobile">'+
 					'<h6>'+data.rating+'<span class="fa fa-star"></span></h6>'+
 				'</div>'+
